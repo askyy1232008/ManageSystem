@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+	<!-- appender 部分是可用的日志输出方式定义，可以定义多个 -->
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%l %d{ISO8601}-- %p -- %m%n" />
+		</layout>
+	</appender>
+	<appender name="DEBUG" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${root}/WEB-INF/logs/debug.log" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="10000KB" />
+		<param name="MaxBackupIndex" value="50" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%l %d{ISO8601}-- %p -- %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG" />
+			<param name="LevelMax" value="DEBUG" />
+		</filter>
+	</appender>
+	<appender name="INFO" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${root}/WEB-INF/logs/info.log" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="10000KB" />
+		<param name="MaxBackupIndex" value="50" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%l %d{ISO8601}-- %p -- %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="INFO" />
+			<param name="LevelMax" value="INFO" />
+		</filter>
+	</appender>
+	<appender name="WARN" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${root}/WEB-INF/logs/warn.log" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="10000KB" />
+		<param name="MaxBackupIndex" value="50" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%l %d{ISO8601}-- %p -- %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="WARN" />
+			<param name="LevelMax" value="WARN" />
+		</filter>
+	</appender>
+	<appender name="ERROR" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${root}/WEB-INF/logs/error.log" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="10000KB" />
+		<param name="MaxBackupIndex" value="50" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%l %d{ISO8601}-- %p -- %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="ERROR" />
+			<param name="LevelMax" value="ERROR" />
+		</filter>
+	</appender>
+
+
+	<appender name="WATCHTASK" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${root}/WEB-INF/logs/watchtask.log" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="10000KB" />
+		<param name="MaxBackupIndex" value="50" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%l %d{ISO8601}-- %p -- %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="INFO" />
+			<param name="LevelMax" value="INFO" />
+		</filter>
+	</appender>
+
+	<!-- category 部分定义了特定包或者类的输出级别和方式，可以有多个 -->
+	<category name="org.apache">
+		<priority value="warn" />
+		<appender-ref ref="WARN" />
+	</category>
+
+	<!-- 打印日志到固定的文件中WATCHTASK 选择自定义的日志级别设置 -->
+	<category name="com.wechat">
+		<priority value="info" />
+		<appender-ref ref="WATCHTASK" />
+	</category>
+
+	<!-- root部分定义了log4j的默认输出级别和方式 -->
+	<root>
+		<priority value="warn" />
+		<appender-ref ref="INFO" />
+		<appender-ref ref="WARN" />
+		<appender-ref ref="ERROR" />
+		<appender-ref ref="STDOUT" />
+	</root>
+</log4j:configuration> 
