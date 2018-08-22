@@ -1,15 +1,16 @@
-.bgclass, .bgclass .bgimg {
-	position: relative;
-	display: -webkit-box;
-	-webkit-box-pack: center;
-	-webkit-box-align: center;
-	-webkit-box-orient: vertical;
-	text-align: center
+.bgclass, .bgclass .register-box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	transform: translate(-50%, -50%);
+	text-align: center;
 }
 
-.bgclass .register-box {
-	position: relative;
-	top: -550px;
+.bgclass {
+	background-image: url("/ManageSystem/assets/img/wow-banner.jpg");
+	width: 1345px;
+	height: 750px;
 }
 
 .bgclass .register-box .title {
@@ -91,41 +92,48 @@
 }
 
 .bgclass .register-box .code-box .code {
-	position:relative;
-	width: 100px;
-	height: 50px;
-}
-.bgclass .register-box .code-box .code canvas{
 	position: relative;
-	top:8px;
 }
+
+.bgclass .register-box .code-box .code canvas {
+	position: relative;
+	top: 8px;
+	width:100px;
+	height: 30px;
+	line-height: 30px;
+}
+
 .bgclass .register-box .register {
 	cursor: pointer;
 	margin-top: 10px;
 }
 
-.bgclass .register-box .register:HOVER {
+.bgclass .register-box .register:hover {
 	background-color: red;
 	color: rgb(255, 255, 255);
 }
-.bgclass .register-box .message{
-	margin-top:30px;
+
+.bgclass .register-box .message {
+	margin-top: 30px;
 	text-align: center;
 }
-.bgclass .register-box .message span a,
-.bgclass .register-box .message span a:link,
-.bgclass .register-box .message span a:visited,
-.bgclass .register-box .message span a:active{
-	font-size:12px;
-	text-decoration:none;
+
+.bgclass .register-box .message span a, .bgclass .register-box .message span a:link,
+	.bgclass .register-box .message span a:visited, .bgclass .register-box .message span a:active
+	{
+	font-size: 12px; text-decoration : none;
 	color: rgb(255, 255, 255);
+	text-decoration: none;
 }
-.bgclass .register-box .message span a:hover{
-	color:red;
+
+.bgclass .register-box .message span a:hover {
+	color: red;
 }
-.bgclass .register-box .message .m1{
+
+.bgclass .register-box .message .m1 {
 	margin-right: 5px;
 }
-.bgclass .register-box .message m3{
+
+.bgclass .register-box .message m3 {
 	margin-left: 5px;
 }
