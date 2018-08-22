@@ -93,7 +93,7 @@
 .bgclass .register-box .code-box .code {
 	position:relative;
 	width: 100px;
-	line-height: normal;
+	height: 50px;
 }
 .bgclass .register-box .code-box .code canvas{
 	position: relative;
