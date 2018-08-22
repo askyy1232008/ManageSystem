@@ -22,4 +22,10 @@ public interface UserService {
 	 * @return
 	 */
 	boolean checkUsername(String username);
+	/***
+	 * 校验email是否存在
+	 * @param email
+	 * @return
+	 */
+	boolean checkEmail(String email);
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.lee.entity.AccountParams;
 import com.lee.entity.Result;
 import com.lee.service.UserService;
+import com.lee.util.TransactSQLInjection;
 
 @Controller
 @RequestMapping(value = "/user")
@@ -34,16 +35,23 @@ public class UserController {
 //	}
 	// http://localhost:8080/ManageSystem/user/test?userName=user
 
-	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	/***
+	 * my wower register
+	 * @param username
+	 * @param password
+	 * @param email
+	 * @return
+	 */
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	@ResponseBody
 	public Object registerWlk(@RequestParam("username") String username, @RequestParam("password") String password,
 			@RequestParam("email") String email) {
 		if(username.trim().length() == 0 || password.trim().length() == 0 || email.trim().length() == 0){
 			return Result.newSuccess(400, Result.getCodeMessage(400), null, "/user/register");
 		}
-		accountParams.setUsername(username.trim());
-		accountParams.setPassword(password.trim());
-		accountParams.setEmail(email.trim());
+		accountParams.setUsername(TransactSQLInjection.TransactSQLInjectionForMySystem(username.trim()));
+		accountParams.setPassword(TransactSQLInjection.TransactSQLInjectionForMySystem(password.trim()));
+		accountParams.setEmail(TransactSQLInjection.TransactSQLInjectionForMySystem(email.trim()));
 		return Result.newSuccess(200, Result.getCodeMessage(200), userService.leeRegisterWlk(accountParams), "/user/register");
 	}
 }

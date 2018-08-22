@@ -42,7 +42,8 @@ public class UserServiceImpl implements UserService {
 	public Map<String,String> leeRegisterWlk(AccountParams player) {
 		Map<String,String> m = new HashMap<String,String>();
 		boolean checkU = checkUsername(player.getUsername());
-		if(!checkU){
+		boolean checkE = checkEmail(player.getEmail());
+		if(!checkU && !checkE){
 			String username = player.getUsername();
 			String password = player.getPassword();
 			String email = player.getEmail();
@@ -50,7 +51,7 @@ public class UserServiceImpl implements UserService {
 			jdbcTemplate.update(sql);
 			m.put("result", "注册成功!");
 		}else{
-			m.put("result", "用户名已存在!");
+			m.put("result", "用户名或email已存在!");
 		}
 		return m;
 	}
@@ -65,5 +66,17 @@ public class UserServiceImpl implements UserService {
 		}else{
 			return false;
 		}	
+	}
+
+	@Override
+	public boolean checkEmail(String email) {
+		// TODO Auto-generated method stub
+		String sql = "select count(*) from `account` where email = ?";
+		Integer count = jdbcTemplate.queryForObject(sql, new Object[]{ email }, Integer.class);
+		if(count>0){
+			return true;
+		}else{
+			return false;
+		}
 	}
 }
