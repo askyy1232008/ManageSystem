@@ -158,7 +158,7 @@ public class UserServiceImpl implements UserService {
 			String sql = "update `account` set `sha_pass_hash`=SHA1(CONCAT(UPPER('"+ username +"'),':',UPPER('"+ newPwd +"'))),v=0, s=0,`password`='"+ newPwd +"'  where `username`='"+ username +"' and `email`='"+ email +"'";
 			Integer i = jdbcTemplate.update(sql);
 			if(i>0){
-				SendMailUtil.send(email, "wow密码重置", "重置后的新密码为:"+newPwd, "smtp", "smtp.163.com", "b504861378@163.com", "", "b504861378", "*************");
+				SendMailUtil.send(email, "wow密码重置", "重置后的新密码为:"+newPwd, "smtp", "smtp.163.com", "b504861378@163.com", "", "b504861378", "*********");
 				m.put("result", "找回密码成功，请查看您的邮箱!");
 			}else{
 				m.put("result", "数据更新失败!");
