@@ -7,8 +7,8 @@ ssh &amp; mysql for my wower register <br />
     dbName=acore_auth<br />
     jdbc.username=root<br />
     jdbc.password=****<br />
-1.2 修改 邮件发送内容  ManageSystem/src/com/lee/service/impl/UserServiceImpl.java   <br />
-    SendMailUtil.send 的参数   可以参考ManageSystem/src/com/lee/util/SendMailUtil.java  里面的main函数
+1.2 修改 邮件发送内容  ManageSystem/src/com/lee/service/impl/UserServiceImpl.java 
+    SendMailUtil.send 的参数   可以参考ManageSystem/src/com/lee/util/SendMailUtil.java  里面的main函数<br />
 2.需要下eclipse将源码编译成war包。 百度eclipse 就可以了。再百度下eclipse打包项目就知道咋做了.<br />
 3.编译会生成一个ManageSystem.war<br />
 4.将这个包丢到tomcat目录下的webapps文件夹里面，然后启动tomcat就可以了<br />
