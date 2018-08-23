@@ -1,27 +1,141 @@
-.bgimg{
-	position:relative;
-	top:0;left:0;
-	width:100%;
+html, body {
+	margin: 0;
+	padding: 0;
 	height: 100%;
 }
-.bgclass, .bgclass .register-box {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 100%;
-	transform: translate(-50%, -50%);
-	text-align: center;
-}
-.bgclass .register-box{
-	margin-top:90px;
-}
-.bgclass .register-box .title {
-	color: red;
-	font-size: 14px;
+
+body {
+	background: url('/ManageSystem/assets/img/wlk.jpg') 50% 50% no-repeat
+		#f2f2f2;
+	font-family:Microsoft YaHei;
 }
 
-.bgclass .register-box input {
-	color: #333;
+#floater {
+	position: relative;
+	float: left;
+	height: 50%;
+	margin-bottom: -200px;
+	width: 1px;
+}
+
+#side {
+	position: relative;
+}
+
+#centered {
+	position: relative;
+	clear: left;
+	height: 400px;
+	width: 80%;
+	max-width: 800px;
+	min-width: 400px;
+	margin: 0 auto;
+	background: #1F2121;
+	border: 4px solid #1F2121;
+	color:#fff;
+	/*opacity: 0.8;
+	filter: alpha(opacity = 80);
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;*/
+}
+
+#bottom {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+#nav {
+	position: absolute;
+	left: 10px;
+	top: 200px;
+	bottom: 0;
+	right: 70%;
+	padding: 20px;
+	margin: 10px;
+}
+
+#nav {
+	margin-bottom: 5px;
+}
+#nav li{
+	list-style-type:none;
+}
+
+#content {
+	position: absolute;
+	left: 30%;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	overflow: auto;
+	height: 340px;
+	padding: 20px;
+	margin: 10px;
+}
+
+#centered {
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;	
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	color: #fff;
+}
+
+h1 {
+	color: #D92B4C;
+	border-bottom: 1px solid #ddd;
+	letter-spacing: -0.05em;
+	font-weight: bold;
+	margin-top: 0;
+	padding-top: 0;
+	/*字距*/
+	letter-spacing: 5px;
+}
+
+#bottom {
+	padding: 10px;
+	font-size: 0.7em;
+	color: #f03;
+}
+
+#logo {
+	font-family:Georgia, Times, serifs;
+	position: relative;
+	left: 60px;
+	top: 50px;
+	font-size: 2em;
+	text-align: center;
+	color: #fff;
+	font-size: 2em;
+}
+
+#logo strong {
+	font-weight: normal;
+	float: left;
+}
+
+#logo span {
+	display: block;
+	font-size: 4em;
+	line-height: 0.7em;
+	color: #fff;
+}
+
+p, h2, h3 {
+	line-height: 1.6em;
+}
+
+a {
+	color: #D92B4C;
+}
+
+input {
+	color: #fff;
 	line-height: normal;
 	font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun;
 	font-style: normal;
@@ -44,7 +158,7 @@
 	border-top-right-radius: 3px;
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
-	text-shadow: 0px 1px 2px #fff;
+	text-shadow: 0px 1px 2px #666;
 	background-attachment: scroll;
 	background-repeat: repeat-x;
 	background-position-x: left;
@@ -52,7 +166,7 @@
 	background-size: auto;
 	background-origin: padding-box;
 	background-clip: border-box;
-	background-color: rgb(255, 255, 255);
+	background-color: #666;
 	margin-right: 8px;
 	border-top-color: #ccc;
 	border-right-color: #ccc;
@@ -67,76 +181,111 @@
 	border-bottom-style: solid;
 	border-left-style: solid;
 	height: 40px;
+	padding-left:10px;
 }
 
-.bgclass .register-box input:focus {
+input:focus {
 	border: 1px solid #fafafa;
 	-webkit-box-shadow: 0px 0px 6px #007eff;
 	-moz-box-shadow: 0px 0px 5px #007eff;
 	box-shadow: 0px 0px 5px #007eff;
 }
-
-.bgclass .register-box .username, .bgclass .register-box .pwd, .bgclass .register-box .email,
-	.bgclass .register-box .register {
-	width: 400px;
+input[type="text"], input[type="password"],input[type="email"]{
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	padding-left:10px;
 }
-
-.bgclass .register-box .username {
-	margin-top: 20px;
+input {
+	cursor: expression(this.type == "button" ? "pointer" : "auto");
 }
-
-.bgclass .register-box .pwd, .bgclass .register-box .email {
-	margin-top: 60px;
-}
-
-.bgclass .register-box .code-box {
-	text-align: center;
-	margin-top: 40px;
-}
-
-.bgclass .register-box .code-box .code {
-	position: relative;
-}
-
-.bgclass .register-box .code-box .code canvas {
-	position: relative;
-	top: 8px;
-	width:180px;
-	height: 50px;
-	line-height: 50px;
-}
-
-.bgclass .register-box .register {
+input[type="button"] {
 	cursor: pointer;
-	margin-top: 20px;
+	padding:5px 5px 5px 5px;
 }
 
-.bgclass .register-box .register:hover {
-	background-color: red;
-	color: rgb(255, 255, 255);
+input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	color: #fff;
+	/*缩进*/
+	text-indent: 10px;
+	*display:block;
 }
 
-.bgclass .register-box .message {
-	margin-top: 50px;
-	text-align: center;
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: #fff;
+	text-indent: 10px;
+	*display:block;
 }
 
-.bgclass .register-box .message span a, .bgclass .register-box .message span a:link,
-	.bgclass .register-box .message span a:visited, .bgclass .register-box .message span a:active
-	{
-	font-size: 12px; text-decoration : none;
-	color: rgb(255, 255, 255);
-	text-decoration: none;
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: #fff;
+	text-indent: 10px;
+	*display:block;
 }
 
-.bgclass .register-box .message span a:hover {
-	color: red;
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: #fff;
+	text-indent: 10px;
+	*display:block;
 }
 
-.bgclass .register-box .message .m1 {
-	margin-right: 5px;
+.table, .table * {
+	margin: 0 auto;
+	padding: 0;
+	font-size: 14px;
+	font-family: Arial, 宋体, Helvetica, sans-serif;
 }
 
-.bgclass .register-box .message m3 {
-	margin-left: 5px;
+.table {
+	display: table;
+	width: 80%;
+	border-collapse: collapse;
+}
+
+.table-tr {
+	display: table-row;
+	height: 60px;
+}
+
+.table-th {
+	display: table-cell;
+	height: 35px;
+	line-height: 35px; text-align : left;
+	vertical-align: middle;
+	text-align: left;
+}
+
+.table-td {
+	display: table-cell;
+	height: 35px;
+	line-height: 35px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.code {
+	width: 100px;
+	height: 30px;
+}
+.update-pwd , .retrieve-pwd,.client-download,.login-bat,.customer{
+	margin-left:10px;
+	background-color:#1F2121;
+	color: #fff;
+	border-color: #fff;
+}
+.register{
+	background-color:#D92B4C;
+	color: #ffffff;
+	border: #ffffff;
+}
+.register:hover,.update-pwd:hover , .retrieve-pwd:hover,.client-download:hover,.login-bat:hover,.customer:hover{
+	background-color:#666;
+	color: #ffffff;
+	border-color: #666;
+}
+.btns{
+	padding-left: 50px;
+	margin-top:30px;
+}
+.update-box,.retrieve-box,#update,#retrieve,.download-page,.sponsor-page,.setting-page,.statement-page{
+	display:none;
 }

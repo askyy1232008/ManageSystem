@@ -54,4 +54,43 @@ public class UserController {
 		accountParams.setEmail(TransactSQLInjection.TransactSQLInjectionForMySystem(email.trim()));
 		return Result.newSuccess(200, Result.getCodeMessage(200), userService.leeRegisterWlk(accountParams), "/user/register");
 	}
+	/***
+	 * 修改密码
+	 * @param username
+	 * @param oldPwd
+	 * @param newPwd
+	 * @return
+	 */
+	@RequestMapping(value = "/updatePwd", method = RequestMethod.POST)
+	@ResponseBody
+	public Object updatePwd(@RequestParam("username") String username, @RequestParam("oldPwd") String oldPwd,
+			@RequestParam("newPwd") String newPwd) {
+		if(username.trim().length() == 0 || oldPwd.trim().length() == 0 || newPwd.trim().length() == 0){
+			return Result.newSuccess(400, Result.getCodeMessage(400), null, "/user/register");
+		}
+		accountParams.setUsername(TransactSQLInjection.TransactSQLInjectionForMySystem(username.trim()));
+		accountParams.setOldPwd(TransactSQLInjection.TransactSQLInjectionForMySystem(oldPwd.trim()));
+		accountParams.setNewPwd(TransactSQLInjection.TransactSQLInjectionForMySystem(newPwd.trim()));
+		return Result.newSuccess(200, Result.getCodeMessage(200), userService.leeUpdatePwd(accountParams), "/user/updatePwd");
+	}
+	/***
+	 * 找回密码
+	 * @param username
+	 * @param email
+	 * @param newPwd
+	 * @return
+	 */
+	@RequestMapping(value = "/retrievePwd", method = RequestMethod.POST)
+	@ResponseBody
+	public Object retrievePwd(@RequestParam("username") String username, @RequestParam("email") String email,
+			@RequestParam("newPwd") String newPwd) {
+		if(username.trim().length() == 0 || email.trim().length() == 0 || newPwd.trim().length() == 0){
+			return Result.newSuccess(400, Result.getCodeMessage(400), null, "/user/register");
+		}
+		accountParams.setUsername(TransactSQLInjection.TransactSQLInjectionForMySystem(username.trim()));
+		accountParams.setEmail(TransactSQLInjection.TransactSQLInjectionForMySystem(email.trim()));
+		accountParams.setNewPwd(TransactSQLInjection.TransactSQLInjectionForMySystem(newPwd.trim()));
+		return Result.newSuccess(200, Result.getCodeMessage(200), userService.leeRetrievePwd(accountParams), "/user/retrievePwd");
+	}
+	
 }

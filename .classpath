@@ -81,5 +81,6 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jedis-2.1.0.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring-data-redis-1.0.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/zxing3.2.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/javax.mail-1.5.4.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

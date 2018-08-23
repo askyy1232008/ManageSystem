@@ -2,36 +2,139 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Register</title>
+<meta name="description" content="lfwow" />
+<meta name="keywords" content="lfwow" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title>LFWOW Register</title>
+<link rel="icon" href="../assets/img/wow.png">
 <link rel="stylesheet" href="../assets/css/index.css" type="text/css" />
 </head>
 <body>
-	<img class="bgimg" src="../assets/img/wow-banner.jpg" />
-	<div class="bgclass">
-		<div class="register-box">
-			<span class="title">lfwow注册</span>
-			<br /> 
-			<input class="username" id="username" name="username" type="text" placeholder="*请输入用户名&长度不能低于6位..." />
-			<br /> 
-			<input class="pwd" id="pwd" name="pwd" type="password" placeholder="*请输入密码&长度不能低于6位..." />
-			<br />
-			<input class="email" id="email" name="email" type="email" placeholder="*请输入绑定邮箱&需要它进行密码找回哦..." />
-			<br />
-			<div class="code-box">
-				<input type="text" id="code_input" value="" placeholder="*请输入验证码..." />
-				<span class="code" id="code"></span>
+	<div id="floater"></div>
+    <div id="centered">
+
+        <div id="side">
+            <div id="logo">
+                <strong><span>LF</span>LF Wow</strong>
+            </div>
+            <ul id="nav">
+                <li><a href="/ManageSystem/html/index.html">注册</a></li>
+                <li><a href="#" class="download">下载</a></li>
+                <li><a href="#" class="sponsor">赞助</a></li>
+                <li><a href="#" class="setting">设置</a></li>
+                <li><a href="#" class="statement">声明</a></li>
+            </ul>
+        </div>
+
+        <div id="content">
+        	<div class="register-page">
+        		<div class="register-box">
+	            	<h1>账号注册</h1>
+					<div class="table">
+						<div class="table-tr">
+							<div class="table-td">
+								<input class="username" id="username" name="username" type="text" placeholder="用户账号" />
+							</div>
+							<div class="table-td">
+								<input class="email" id="email" name="email" type="email" placeholder="电子邮件" />
+							</div>
+						</div>
+						<div class="table-tr">
+							<div class="table-td">
+								<input class="pwd" id="pwd" name="pwd" type="password" placeholder="输入密码" />
+							</div>
+							<div class="table-td">
+								<input class="pwd1" id="pwd1" name="pwd1" type="password" placeholder="确认密码" />
+							</div>
+						</div>
+						<div class="table-tr">
+							<div class="table-td">
+								<input type="text" id="code_input" value="" placeholder="输入验证码" />
+							</div>
+							<div class="table-td">
+								<span class="code" id="code"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="update-box">
+					<h1>修改密码</h1>
+					<div class="table">
+						<div class="table-tr">
+							<div class="table-td">
+								<input class="update-username" id="update-username" name="update-username" type="text" placeholder="用户账号" />
+							</div>
+							<div class="table-td">
+								<input class="update-old-pwd" id="update-old-pwd" name="update-old-pwd" type="password" placeholder="旧密码" />
+							</div>
+						</div>
+						<div class="table-tr">
+							<div class="table-td">
+								<input class="update-password" id="update-password" name="update-password" type="password" placeholder="输入新密码" />
+							</div>
+							<div class="table-td">
+								<input class="update-password1" id="update-password1" name="update-password1" type="password" placeholder="确认新密码" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="retrieve-box">
+					<h1>找回密码</h1>
+					<div class="table">
+						<div class="table-tr">
+							<div class="table-td">
+								<input class="retrieve-username" id="retrieve-username" name="retrieve-username" type="text" placeholder="用户账号" />
+							</div>
+							<div class="table-td">
+								<input class="retrieve-email" id="retrieve-email" name="retrieve-email" type="email" placeholder="电子邮件" />
+							</div>
+						</div>
+						<div class="table-tr">
+							<div class="table-td">
+								<input class="retrieve-password" id="retrieve-password" name="retrieve-password" type="password" placeholder="输入新密码" />
+							</div>
+							<div class="table-td">
+								<input class="retrieve-password1" id="retrieve-password1" name="retrieve-password1" type="password" placeholder="确认新密码" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="btns">
+					<input class="register" id="register" name="register" value="确认注册" type="button" />
+					<input class="register" id="update" name="update" value="确认修改" type="button" />
+					<input class="register" id="retrieve" name="retrieve" value="确认找回" type="button" />
+					<input class="update-pwd" id="update-pwd" name="update-pwd" value="修改密码" type="button" />
+					<input class="retrieve-pwd" id="retrieve-pwd" name="retrieve-pwd" value="找回密码" type="button" />
+				</div>	
 			</div>
-			<br /> 
-			<input class="register" id="register" name="register" value="注册" type="button" /><br />
-			<div class="message">
-				<span class="m1"><a href="../assets/files/wlk.zip">登录器下载</a></span>
-				<span class="m2"><a href="https://pan.baidu.com/s/1gf0WV8v#list/path=%2F">客户端下载(提取码:94k6)</a></span>
-				<span class="m3"><a href="https://jq.qq.com/?_wv=1027&k=5yvHrz8">QQ群:250485016 点击加入</a></span>
-				<br />
-				<span class="my"><a href="http://wpa.qq.com/msgrd?v=3&uin=504861378&site=qq&menu=yes">技术支持 点击即聊</a></span>
-			</div>
-		</div>
-	</div>
+			<div class="download-page">
+    			<h1>相关下载</h1>
+        		<p>
+        			<input class="login-bat" id="login-bat" name="login-bat" value="登录器" type="button" />
+        			<input class="client-download" id="client-download" name="client-download" value="客户端" type="button" />
+        		</p>
+    		</div>
+    		<div class="sponsor-page">
+    			<h1>友情赞助</h1>
+        		<p>
+        			本服所有的玩家赞助费用全部用于服务器、网络租赁与维护、版本更新等费用！<br /><br />
+        			<input class="customer" id="customer" name="customer" value="暂未开放 详情咨询" type="button" />
+        		</p>
+    		</div>
+    		<div class="setting-page">
+    			<h1>游戏设置</h1>
+        		<p>GM还没有写~</p>
+    		</div>	
+    		<div class="statement-page">
+    			<h1>免责声明</h1>
+        		<p>关于：怀旧服务器，以下简称本服，本服使用代码是基于国外 Github 开源项目AzerothCore，并在团队内部进行二次开发的系统。其本身内核是基于国际开源代码。其中所有代码均遵循GPL协议，对所有人开放！所有人可以获得该代码，并编译执行！本服是完全免费的、非盈利的、技术团队均来自国内 Mangos 社区以研究魔兽世界模拟器技术的爱好者组织。我们仅为 Mangos、Trinity模拟器研究爱好者提供一个模拟游戏环境，以研究开源的 C++,MYSQL 等技术，以学习知识为目的！我们希望每个朋友都以官方游戏为准，支持官方正版游戏！</p>
+				<p>声明：本服所有的玩家赞助费用全部用于服务器、网络租赁与维护、版本更新等费用，本服完全没有任何赢利性商业行为。本站以及本服的所有资料及游戏中提到的所谓“点券、充值”等词汇实质为捐赠方式，并非商业用语所指的行为模式。我们支持和鼓励玩家在魔兽世界官方进行游戏，如果对阁下（任何个人、单位、团体、机关、企事业单位等）产生冒犯或者侵害，请您立即告知我们，我们将改正模式。敬请广大玩家以及所有关注本服的用户注意。特此声明!</p>
+    		</div>	
+        </div>
+    </div>
+    <div id="bottom">
+        <p>Copyright by <a href="http://wpa.qq.com/msgrd?v=3&uin=504861378&site=qq&menu=yes">GaoAnLee</a></p>
+    </div>
 </body>
 <script src="../assets/js/jquery.min.js" type="text/javascript"></script>
 <script src="../assets/js/code.js" type="text/javascript"></script>

@@ -28,4 +28,31 @@ public interface UserService {
 	 * @return
 	 */
 	boolean checkEmail(String email);
+	
+	/***
+	 * 修改密码
+	 * @param player
+	 * @return
+	 */
+	Map<String,String> leeUpdatePwd(AccountParams player);
+	/***
+	 * 校验用户
+	 * @param username
+	 * @param password
+	 * @return
+	 */
+	boolean checkUser(String username,String password);
+	/***
+	 * 校验用户
+	 * @param username
+	 * @param email
+	 * @return
+	 */
+	boolean checkUserEmail(String username,String email);
+	/***
+	 * 找回密码
+	 * @param player
+	 * @return
+	 */
+	Map<String,String> leeRetrievePwd(AccountParams player);
 }
