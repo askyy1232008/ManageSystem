@@ -1,7 +1,7 @@
 //禁用右键菜单
-//document.oncontextmenu = function(){
-//    event.returnValue = false;
-//}
+document.oncontextmenu = function(){
+    event.returnValue = false;
+}
 //禁用选取内容
 document.onselectstart = function() {
 	event.returnValue = false;
