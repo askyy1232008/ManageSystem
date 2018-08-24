@@ -13,3 +13,5 @@ ssh &amp; mysql for my wower register <br />
 3.编译会生成一个ManageSystem.war<br />
 4.将这个包丢到tomcat目录下的webapps文件夹里面，然后启动tomcat就可以了<br />
 5.访问的本地地址是:http://localhost:8080/ManageSystem/html/index.html   localhost 改自己的ip就行<br />
+
+补充事项：我给accout表增加了一个password字段 vachar(40) 以便于管理
